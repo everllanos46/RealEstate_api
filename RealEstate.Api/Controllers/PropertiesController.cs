@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using RealEstate.Application.Mappers;
 using RealEstate.Domain.Entities;
 using RealEstate.Domain.Interfaces;
 
@@ -20,7 +21,8 @@ public class PropertiesController : ControllerBase
                                            [FromQuery] decimal? minPrice, [FromQuery] decimal? maxPrice)
     {
         var properties = await _repository.GetAllAsync(name, address, minPrice, maxPrice);
-        return Ok(properties);
+        var result = properties.Select(p => PropertyMapper.ToDto(p));
+        return Ok(result);
     }
 
     [HttpGet("{id}")]
