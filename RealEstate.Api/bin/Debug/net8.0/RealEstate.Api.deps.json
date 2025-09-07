@@ -166,6 +166,9 @@
         }
       },
       "RealEstate.Domain/1.0.0": {
+        "dependencies": {
+          "MongoDB.Driver": "3.4.3"
+        },
         "runtime": {
           "RealEstate.Domain.dll": {}
         }

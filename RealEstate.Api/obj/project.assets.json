@@ -332,6 +332,9 @@
       "RealEstate.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "MongoDB.Driver": "3.4.3"
+        },
         "compile": {
           "bin/placeholder/RealEstate.Domain.dll": {}
         },
@@ -1106,11 +1109,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Api\\RealEstate.Api.csproj",
+      "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Api\\RealEstate.Api.csproj",
       "projectName": "RealEstate.Api",
-      "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Api\\RealEstate.Api.csproj",
+      "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Api\\RealEstate.Api.csproj",
       "packagesPath": "C:\\Users\\everl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Api\\obj\\",
+      "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\everl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1128,11 +1131,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Application\\RealEstate.Application.csproj": {
-              "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Application\\RealEstate.Application.csproj"
+            "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Application\\RealEstate.Application.csproj": {
+              "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Application\\RealEstate.Application.csproj"
             },
-            "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj"
+            "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj"
             }
           }
         }
