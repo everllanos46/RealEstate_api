@@ -1,0 +1,286 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Api\\RealEstate.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Api\\RealEstate.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Api\\RealEstate.Api.csproj",
+        "projectName": "RealEstate.Api",
+        "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Api\\RealEstate.Api.csproj",
+        "packagesPath": "C:\\Users\\everl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\everl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Application\\RealEstate.Application.csproj": {
+                "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Application\\RealEstate.Application.csproj"
+              },
+              "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Application\\RealEstate.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Application\\RealEstate.Application.csproj",
+        "projectName": "RealEstate.Application",
+        "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Application\\RealEstate.Application.csproj",
+        "packagesPath": "C:\\Users\\everl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\everl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj": {
+                "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj",
+        "projectName": "RealEstate.Domain",
+        "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj",
+        "packagesPath": "C:\\Users\\everl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\everl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
+        "projectName": "RealEstate.Infrastructure",
+        "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\everl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\everl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj": {
+                "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
