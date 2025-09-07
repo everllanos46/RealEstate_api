@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AAKyaCHjkag=",
+  "dgSpecHash": "8KyKZXMQ65c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\everl\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\everl\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",

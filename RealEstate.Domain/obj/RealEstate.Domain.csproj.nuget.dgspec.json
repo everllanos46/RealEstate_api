@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj": {}
+    "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Domain\\RealEstate.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj": {
+    "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Domain\\RealEstate.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Domain\\RealEstate.Domain.csproj",
         "projectName": "RealEstate.Domain",
-        "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\RealEstate.Domain.csproj",
+        "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Domain\\RealEstate.Domain.csproj",
         "packagesPath": "C:\\Users\\everl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\Prueba\\RealEstate.Domain\\obj\\",
+        "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\everl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.4.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
