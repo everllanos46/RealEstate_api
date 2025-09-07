@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "G5johRjXV1EQduqczlqErd/XSNSQtDF9jx1HNd7iHzA=",
+  "Hash": "gQMbvxdvTaFdZlNEefrCVA/UBIRnGhALdBdjbkCva7g=",
   "Source": "RealEstate.Api",
   "BasePath": "_content/RealEstate.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "RealEstate.Api\\wwwroot",
+      "Source": "RealEstate.Api",
+      "ContentRoot": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Api\\wwwroot\\",
+      "BasePath": "_content/RealEstate.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Api\\wwwroot\\uploads\\properties\\1\\df2a06d7-66b3-4cc8-8c75-fd6bd749db9f_miniatura_1280x720.png",
+      "SourceId": "RealEstate.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Api\\wwwroot\\",
+      "BasePath": "_content/RealEstate.Api",
+      "RelativePath": "uploads/properties/1/df2a06d7-66b3-4cc8-8c75-fd6bd749db9f_miniatura_1280x720.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\properties\\1\\df2a06d7-66b3-4cc8-8c75-fd6bd749db9f_miniatura_1280x720.png"
+    }
+  ]
 }

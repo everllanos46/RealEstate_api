@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using RealEstate.Application.Mappers;
+using RealEstate.Application.Services;
 using RealEstate.Domain.Entities;
-using RealEstate.Domain.Interfaces;
 
 namespace RealEstate.Api.Controllers;
 
@@ -9,49 +8,33 @@ namespace RealEstate.Api.Controllers;
 [Route("api/[controller]")]
 public class PropertiesController : ControllerBase
 {
-    private readonly IPropertyRepository _repository;
+    private readonly PropertyService _service;
 
-    public PropertiesController(IPropertyRepository repository)
+    public PropertiesController(PropertyService service)
     {
-        _repository = repository;
+        _service = service;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll([FromQuery] string? name, [FromQuery] string? address,
                                            [FromQuery] decimal? minPrice, [FromQuery] decimal? maxPrice)
     {
-        var properties = await _repository.GetAllAsync(name, address, minPrice, maxPrice);
-        var result = properties.Select(p => PropertyMapper.ToDto(p));
+        var result = await _service.GetAllAsync(name, address, minPrice, maxPrice);
         return Ok(result);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(string id)
     {
-        var property = await _repository.GetByIdAsync(id);
-        if (property == null) return NotFound();
-        return Ok(property);
+        var result = await _service.GetByIdAsync(id);
+        if (result == null) return NotFound();
+        return Ok(result);
     }
 
     [HttpPost]
     public async Task<IActionResult> Create(Property property)
     {
-        await _repository.AddAsync(property);
-        return CreatedAtAction(nameof(GetById), new { id = property.IdOwner }, property);
-    }
-
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(string id, Property property)
-    {
-        if (id != property.IdOwner) return BadRequest();
-        await _repository.UpdateAsync(property);
-        return NoContent();
-    }
-
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(string id)
-    {
-        await _repository.DeleteAsync(id);
-        return NoContent();
+        var result = await _service.CreateAsync(property);
+        return CreatedAtAction(nameof(GetById), new { id = property.IdProperty }, result);
     }
 }

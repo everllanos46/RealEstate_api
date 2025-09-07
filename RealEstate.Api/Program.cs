@@ -1,6 +1,7 @@
 using RealEstate.Infrastructure.Data;
 using RealEstate.Infrastructure.Repositories;
 using RealEstate.Domain.Interfaces;
+using RealEstate.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,9 @@ builder.Services.AddSingleton(new MongoDbContext(
 ));
 
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+builder.Services.AddScoped<IPropertyImageRepository, PropertyImageRepository>();
+
+builder.Services.AddScoped<PropertyService>();
 
 builder.Services.AddCors(options =>
 {

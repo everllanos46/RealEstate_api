@@ -39,9 +39,4 @@ public class PropertyRepository : IPropertyRepository
     public async Task AddAsync(Property property) =>
         await _collection.InsertOneAsync(property);
 
-    public async Task UpdateAsync(Property property) =>
-        await _collection.ReplaceOneAsync(p => p.IdOwner == property.IdOwner, property);
-
-    public async Task DeleteAsync(string id) =>
-        await _collection.DeleteOneAsync(p => p.IdOwner == id);
 }

@@ -89,3 +89,4 @@ C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Api\obj\D
 C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Api\obj\Debug\net8.0\RealEstate.Api.pdb
 C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Api\obj\Debug\net8.0\RealEstate.Api.genruntimeconfig.cache
 C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Api\obj\Debug\net8.0\ref\RealEstate.Api.dll
+C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Api\bin\Debug\net8.0\RealEstate.Api.staticwebassets.runtime.json

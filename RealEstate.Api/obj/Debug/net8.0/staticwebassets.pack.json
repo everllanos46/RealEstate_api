@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Api\\wwwroot\\uploads\\properties\\1\\df2a06d7-66b3-4cc8-8c75-fd6bd749db9f_miniatura_1280x720.png",
+      "PackagePath": "staticwebassets\\uploads\\properties\\1\\df2a06d7-66b3-4cc8-8c75-fd6bd749db9f_miniatura_1280x720.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.RealEstate.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.RealEstate.Api.props",
+      "PackagePath": "build\\RealEstate.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.RealEstate.Api.props",
+      "PackagePath": "buildMultiTargeting\\RealEstate.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.RealEstate.Api.props",
+      "PackagePath": "buildTransitive\\RealEstate.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
