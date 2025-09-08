@@ -13,14 +13,22 @@ public class PropertyImageRepository : IPropertyImageRepository
     {
         _collection = context.PropertyImages;
     }
-    public async Task<IEnumerable<PropertyImage>> GetAllAsync()
+    public async Task<IEnumerable<PropertyImage>> GetAllAsync(IEnumerable<string> propertyIds)
     {
-        return await _collection.Find(Builders<PropertyImage>.Filter.Empty).ToListAsync();
+        if (propertyIds == null || !propertyIds.Any())
+            return new List<PropertyImage>();
+
+        var filter = Builders<PropertyImage>.Filter.In(p => p.IdProperty, propertyIds)
+                     & Builders<PropertyImage>.Filter.Eq(p => p.Enabled, true);
+
+        var totalCount = await _collection.CountDocumentsAsync(filter);
+
+        return await _collection.Find(filter).ToListAsync();
     }
 
     public async Task<PropertyImage?> GetByIdAsync(string id)
     {
-        return await _collection.Find(p => p.IdPropertyImage == id).FirstOrDefaultAsync();
+        return await _collection.Find(p => p.IdProperty == id).FirstOrDefaultAsync();
     }
 
     public async Task AddAsync(PropertyImage propertyImage)

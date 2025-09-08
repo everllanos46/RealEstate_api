@@ -17,12 +17,35 @@ public class PropertiesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] string? name, [FromQuery] string? address,
-                                           [FromQuery] decimal? minPrice, [FromQuery] decimal? maxPrice)
+    public async Task<IActionResult> GetAllProperties(
+    [FromQuery] string? nombre = null,
+    [FromQuery] string? direccion = null,
+    [FromQuery] decimal? precioMinimo = null,
+    [FromQuery] decimal? precioMaximo = null,
+    [FromQuery] int pagina = 1,
+    [FromQuery] int tamanoPagina = 10)
     {
-        var result = await _service.GetAllAsync(name, address, minPrice, maxPrice);
-        return Ok(result);
+        try
+        {
+            var (propiedades, totalRegistros) = await _service.GetAllAsync(
+                nombre, direccion, precioMinimo, precioMaximo, pagina, tamanoPagina);
+
+            var respuesta = new
+            {
+                TotalRegistros = totalRegistros,
+                PaginaActual = pagina,
+                TamanoPagina = tamanoPagina,
+                Propiedades = propiedades
+            };
+
+            return Ok(respuesta);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Mensaje = "Ocurrió un error al obtener las propiedades.", Detalle = ex.Message });
+        }
     }
+
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreatePropertyDto request)

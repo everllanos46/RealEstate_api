@@ -16,29 +16,38 @@ public class PropertyService
         _imageRepository = imageRepository;
     }
 
-    public async Task<IEnumerable<PropertyDto>> GetAllAsync(string? name, string? address, decimal? minPrice, decimal? maxPrice)
+    public async Task<(IEnumerable<PropertyDto> Properties, long TotalCount)> GetAllAsync(
+    string? name,
+    string? address,
+    decimal? minPrice,
+    decimal? maxPrice,
+    int pageNumber = 1,
+    int pageSize = 10)
     {
-        var properties = await _propertyRepository.GetAllAsync(name, address, minPrice, maxPrice);
-        var propertyIds = properties.Select(p => p.IdProperty).ToList();
-        var images = await _imageRepository.GetAllAsync();
+        var (properties, totalCount) = await _propertyRepository.GetAllAsync(name, address, minPrice, maxPrice, pageNumber, pageSize);
 
-        return properties.Select(p =>
+        var propertyIds = properties.Select(p => p.IdProperty).ToList();
+        var images = await _imageRepository.GetAllAsync(propertyIds);
+
+        var propertyDtos = properties.Select(p =>
         {
-            var image = images.FirstOrDefault(i => i.IdProperty == p.IdProperty && i.Enabled);
+            var image = images.FirstOrDefault(i => i.IdProperty == p.IdProperty);
             return PropertyMapper.ToDto(p, image);
-        });
+        }).ToList();
+
+        return (propertyDtos, totalCount);
     }
 
-    public async Task<PropertyDto?> GetByIdAsync(string id)
-    {
-        var property = await _propertyRepository.GetByIdAsync(id);
-        if (property == null) return null;
 
-        var image = (await _imageRepository.GetAllAsync())
-            .FirstOrDefault(i => i.IdProperty == property.IdProperty && i.Enabled);
+    public async Task<PropertyDto?> GetByIdAsync(Property property)
+    {
+        if (property == null)
+            return null;
+        var image = await _imageRepository.GetByIdAsync(property.IdProperty);
 
         return PropertyMapper.ToDto(property, image);
     }
+
 
     public async Task<PropertyDto> CreateAsync(CreatePropertyDto request)
     {
@@ -55,7 +64,7 @@ public class PropertyService
 
         await _propertyRepository.AddAsync(property);
 
-        return await GetByIdAsync(property.IdProperty);
+        return await GetByIdAsync(property);
     }
 
 }

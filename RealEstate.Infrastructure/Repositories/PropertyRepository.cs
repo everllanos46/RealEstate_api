@@ -14,7 +14,13 @@ public class PropertyRepository : IPropertyRepository
         _collection = context.Properties;
     }
 
-    public async Task<IEnumerable<Property>> GetAllAsync(string? name, string? address, decimal? minPrice, decimal? maxPrice)
+    public async Task<(IEnumerable<Property> Properties, long TotalCount)> GetAllAsync(
+    string? name,
+    string? address,
+    decimal? minPrice,
+    decimal? maxPrice,
+    int pageNumber = 1,
+    int pageSize = 10)
     {
         var filter = Builders<Property>.Filter.Empty;
 
@@ -30,8 +36,26 @@ public class PropertyRepository : IPropertyRepository
         if (maxPrice.HasValue)
             filter &= Builders<Property>.Filter.Lte(p => p.Price, maxPrice.Value);
 
-        return await _collection.Find(filter).ToListAsync();
+        var totalCount = await _collection.CountDocumentsAsync(filter);
+
+        var projection = Builders<Property>.Projection
+            .Include(p => p.IdProperty)
+            .Include(p => p.Name)
+            .Include(p => p.Address)
+            .Include(p => p.Price)
+            .Include(p => p.CodeInternal);
+
+        var properties = await _collection
+            .Find(filter)
+            .Project<Property>(projection)
+            .Skip((pageNumber - 1) * pageSize)
+            .Limit(pageSize)
+            .ToListAsync();
+
+        return (properties, totalCount);
     }
+
+
 
     public async Task<Property?> GetByIdAsync(string id) =>
         await _collection.Find(p => p.IdProperty == id).FirstOrDefaultAsync();
