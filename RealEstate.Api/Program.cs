@@ -2,6 +2,9 @@ using RealEstate.Infrastructure.Data;
 using RealEstate.Infrastructure.Repositories;
 using RealEstate.Domain.Interfaces;
 using RealEstate.Application.Services;
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
+using RealEstate.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +15,20 @@ builder.Services.AddSingleton(new MongoDbContext(
 
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
 builder.Services.AddScoped<IPropertyImageRepository, PropertyImageRepository>();
+builder.Services.AddScoped<IFileStorageRepository, FirebaseStorageRepository>();
 
 builder.Services.AddScoped<PropertyService>();
+builder.Services.AddScoped<PropertyImageService>();
+
+
+var firebaseKeyPath = builder.Configuration["Firebase:CredentialsPath"];
+if (FirebaseApp.DefaultInstance == null)
+{
+    FirebaseApp.Create(new AppOptions()
+    {
+        Credential = GoogleCredential.FromFile(firebaseKeyPath)
+    });
+}
 
 builder.Services.AddCors(options =>
 {

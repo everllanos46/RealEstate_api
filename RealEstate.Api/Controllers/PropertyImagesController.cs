@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using RealEstate.Application.DTOs;
+using RealEstate.Application.Services;
 using RealEstate.Domain.Entities;
 using RealEstate.Domain.Interfaces;
 
@@ -8,41 +10,31 @@ namespace RealEstate.Api.Controllers;
 [Route("api/[controller]")]
 public class PropertyImagesController : ControllerBase
 {
+    private readonly PropertyImageService _service;
     private readonly IPropertyImageRepository _repository;
 
-    public PropertyImagesController(IPropertyImageRepository repository)
+    public PropertyImagesController(IPropertyImageRepository repository, PropertyImageService imageService)
     {
         _repository = repository;
+        _service = imageService;
     }
 
     [HttpPost("{propertyId}/upload")]
     public async Task<IActionResult> Upload(string propertyId, IFormFile file)
+{
+    if (file == null || file.Length == 0)
+        return BadRequest("No file uploaded.");
+
+    var dto = new UploadFileDto
     {
-        if (file == null || file.Length == 0)
-            return BadRequest("No file uploaded.");
+        FileName = file.FileName,
+        Content = file.OpenReadStream(),
+        ContentType = file.ContentType
+    };
 
-        var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "properties", propertyId);
-        if (!Directory.Exists(uploadsPath))
-            Directory.CreateDirectory(uploadsPath);
-
-        var fileName = $"{Guid.NewGuid()}_{file.FileName}";
-        var filePath = Path.Combine(uploadsPath, fileName);
-
-        using (var stream = new FileStream(filePath, FileMode.Create))
-        {
-            await file.CopyToAsync(stream);
-        }
-
-        var image = new PropertyImage
-        {
-            IdProperty = propertyId,
-            File = $"/uploads/properties/{propertyId}/{fileName}",
-            Enabled = true
-        };
-
-        await _repository.AddAsync(image);
-        return Ok(image);
-    }
+    var image = await _service.UploadAsync(propertyId, dto);
+    return Ok(image);
+}
 
     [HttpGet("{propertyId}")]
     public async Task<IActionResult> GetByProperty(string propertyId)
