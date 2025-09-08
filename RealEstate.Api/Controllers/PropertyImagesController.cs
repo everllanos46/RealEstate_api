@@ -21,25 +21,19 @@ public class PropertyImagesController : ControllerBase
 
     [HttpPost("{propertyId}/upload")]
     public async Task<IActionResult> Upload(string propertyId, IFormFile file)
-{
-    if (file == null || file.Length == 0)
-        return BadRequest("No file uploaded.");
-
-    var dto = new UploadFileDto
     {
-        FileName = file.FileName,
-        Content = file.OpenReadStream(),
-        ContentType = file.ContentType
-    };
+        if (file == null || file.Length == 0)
+            return BadRequest("No file uploaded.");
 
-    var image = await _service.UploadAsync(propertyId, dto);
-    return Ok(image);
-}
+        var dto = new UploadFileDto
+        {
+            FileName = file.FileName,
+            Content = file.OpenReadStream(),
+            ContentType = file.ContentType
+        };
 
-    [HttpGet("{propertyId}")]
-    public async Task<IActionResult> GetByProperty(string propertyId)
-    {
-        var images = await _repository.GetByIdAsync(propertyId);
-        return Ok(images);
+        var image = await _service.UploadAsync(propertyId, dto);
+        return Ok(image);
     }
+
 }

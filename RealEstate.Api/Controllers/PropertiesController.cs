@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using RealEstate.Application.DTOs;
 using RealEstate.Application.Services;
 using RealEstate.Domain.Entities;
 
@@ -23,18 +24,21 @@ public class PropertiesController : ControllerBase
         return Ok(result);
     }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(string id)
+    [HttpPost]
+    public async Task<IActionResult> Create([FromBody] CreatePropertyDto request)
     {
-        var result = await _service.GetByIdAsync(id);
-        if (result == null) return NotFound();
-        return Ok(result);
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+        try
+        {
+            var result = await _service.CreateAsync(request);
+
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Ocurrió un error al crear la propiedad: {ex.Message}");
+        }
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Create(Property property)
-    {
-        var result = await _service.CreateAsync(property);
-        return CreatedAtAction(nameof(GetById), new { id = property.IdProperty }, result);
-    }
 }

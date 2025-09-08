@@ -34,7 +34,7 @@ public class PropertyRepository : IPropertyRepository
     }
 
     public async Task<Property?> GetByIdAsync(string id) =>
-        await _collection.Find(p => p.IdOwner == id).FirstOrDefaultAsync();
+        await _collection.Find(p => p.IdProperty == id).FirstOrDefaultAsync();
 
     public async Task AddAsync(Property property) =>
         await _collection.InsertOneAsync(property);

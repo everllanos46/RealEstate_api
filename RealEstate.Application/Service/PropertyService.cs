@@ -40,9 +40,22 @@ public class PropertyService
         return PropertyMapper.ToDto(property, image);
     }
 
-    public async Task<PropertyDto> CreateAsync(Property property)
+    public async Task<PropertyDto> CreateAsync(CreatePropertyDto request)
     {
+        var property = new Property
+        {
+            IdProperty = Guid.NewGuid().ToString(),
+            Name = request.Name,
+            Address = request.Address,
+            Price = request.Price,
+            CodeInternal = $"INT-{DateTime.UtcNow.Ticks}",
+            Year = DateTime.UtcNow.Year,
+            IdOwner = request.IdOwner
+        };
+
         await _propertyRepository.AddAsync(property);
-        return PropertyMapper.ToDto(property);
+
+        return await GetByIdAsync(property.IdProperty);
     }
+
 }

@@ -13,7 +13,8 @@ public static class PropertyMapper
             Name = property.Name,
             Address = property.Address,
             Price = property.Price,
-            ImageUrl = image?.File ?? string.Empty
+            ImageUrl = image?.File ?? string.Empty,
+            IdProperty = property.IdProperty
         };
     }
 }
