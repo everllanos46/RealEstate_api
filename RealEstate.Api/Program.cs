@@ -5,6 +5,7 @@ using RealEstate.Application.Services;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using RealEstate.Infrastructure.Services;
+using RealEstate.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,11 +13,11 @@ var mongoSettings = builder.Configuration.GetSection("MongoDb");
 builder.Services.AddSingleton(new MongoDbContext(
     mongoSettings["ConnectionString"]!, mongoSettings["DatabaseName"]!
 ));
-
+MongoMapping.Configure();
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
 builder.Services.AddScoped<IPropertyImageRepository, PropertyImageRepository>();
 builder.Services.AddScoped<IFileStorageRepository, FirebaseStorageRepository>();
-
+builder.Services.AddAutoMapper(typeof(PropertyProfile));
 builder.Services.AddScoped<PropertyService>();
 builder.Services.AddScoped<PropertyImageService>();
 

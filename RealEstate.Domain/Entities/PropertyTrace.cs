@@ -1,12 +1,9 @@
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 
 namespace RealEstate.Domain.Entities;
 
-public class PropertyTrace
+public class PropertyTrace : IEntity
 {
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
+
     public string Id { get; set; } = string.Empty;
     public string IdPropertyTrace { get; set; } = string.Empty;
     public DateTime DateSale { get; set; }

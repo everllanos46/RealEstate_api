@@ -1318,11 +1318,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
       "projectName": "RealEstate.Infrastructure",
-      "projectPath": "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\everl\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\everl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1340,8 +1340,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Domain\\RealEstate.Domain.csproj": {
-              "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Domain\\RealEstate.Domain.csproj"
+            "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Domain\\RealEstate.Domain.csproj": {
+              "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Domain\\RealEstate.Domain.csproj"
             }
           }
         }

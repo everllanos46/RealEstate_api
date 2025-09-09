@@ -22,3 +22,16 @@ C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Domain\ob
 C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Domain\obj\Debug\net8.0\RealEstate.Domain.pdb
 C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Domain\obj\Debug\net8.0\ref\RealEstate.Domain.dll
 C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Domain\obj\Debug\net8.0\RealEstate.Domain.csproj.AssemblyReference.cache
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\bin\Debug\net8.0\RealEstate.Domain.deps.json
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\bin\Debug\net8.0\RealEstate.Domain.dll
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\bin\Debug\net8.0\RealEstate.Domain.pdb
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\obj\Debug\net8.0\RealEstate.Domain.csproj.AssemblyReference.cache
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\obj\Debug\net8.0\RealEstate.Domain.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\obj\Debug\net8.0\RealEstate.Domain.AssemblyInfoInputs.cache
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\obj\Debug\net8.0\RealEstate.Domain.AssemblyInfo.cs
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\obj\Debug\net8.0\RealEstate.Domain.csproj.CoreCompileInputs.cache
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\obj\Debug\net8.0\RealEstate.Domain.sourcelink.json
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\obj\Debug\net8.0\RealEstate.Domain.dll
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\obj\Debug\net8.0\refint\RealEstate.Domain.dll
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\obj\Debug\net8.0\RealEstate.Domain.pdb
+c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Domain\obj\Debug\net8.0\ref\RealEstate.Domain.dll

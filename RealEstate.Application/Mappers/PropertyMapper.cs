@@ -1,20 +1,16 @@
+using AutoMapper;
 using RealEstate.Application.DTOs;
 using RealEstate.Domain.Entities;
 
-namespace RealEstate.Application.Mappers;
-
-public static class PropertyMapper
+public class PropertyProfile : Profile
 {
-    public static PropertyDto ToDto(Property property, PropertyImage? image = null)
+    public PropertyProfile()
     {
-        return new PropertyDto
-        {
-            IdOwner = property.IdOwner,
-            Name = property.Name,
-            Address = property.Address,
-            Price = property.Price,
-            ImageUrl = image?.File ?? string.Empty,
-            IdProperty = property.IdProperty
-        };
+        CreateMap<Property, PropertyDto>()
+            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom((src, dest, destMember, context) =>
+            {
+                var image = context.Items["image"] as PropertyImage;
+                return image?.File ?? string.Empty;
+            }));
     }
 }

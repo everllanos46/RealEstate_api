@@ -1,14 +1,7 @@
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-
-
 namespace RealEstate.Domain.Entities;
 
-public class Property
+public class Property : IEntity
 {
-
-    [BsonId] 
-    [BsonRepresentation(BsonType.ObjectId)]
     public string Id { get; set; } = string.Empty;
     public string IdProperty { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
@@ -16,6 +9,5 @@ public class Property
     public decimal Price { get; set; }
     public string CodeInternal { get; set; } = string.Empty;
     public int Year { get; set; }
-
     public string IdOwner { get; set; } = string.Empty;
 }

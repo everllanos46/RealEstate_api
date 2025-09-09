@@ -1,5 +1,6 @@
+using AutoMapper;
 using RealEstate.Application.DTOs;
-using RealEstate.Application.Mappers;
+// using RealEstate.Application.Mappers;
 using RealEstate.Domain.Entities;
 using RealEstate.Domain.Interfaces;
 
@@ -9,11 +10,12 @@ public class PropertyService
 {
     private readonly IPropertyRepository _propertyRepository;
     private readonly IPropertyImageRepository _imageRepository;
-
-    public PropertyService(IPropertyRepository propertyRepository, IPropertyImageRepository imageRepository)
+    private readonly IMapper _mapper;
+    public PropertyService(IPropertyRepository propertyRepository, IPropertyImageRepository imageRepository, IMapper mapper)
     {
         _propertyRepository = propertyRepository;
         _imageRepository = imageRepository;
+        _mapper = mapper;
     }
 
     public async Task<(IEnumerable<PropertyDto> Properties, long TotalCount)> GetAllAsync(
@@ -24,29 +26,42 @@ public class PropertyService
     int pageNumber = 1,
     int pageSize = 10)
     {
+
         var (properties, totalCount) = await _propertyRepository.GetAllAsync(name, address, minPrice, maxPrice, pageNumber, pageSize);
 
         var propertyIds = properties.Select(p => p.IdProperty).ToList();
+
         var images = await _imageRepository.GetAllAsync(propertyIds);
 
         var propertyDtos = properties.Select(p =>
         {
             var image = images.FirstOrDefault(i => i.IdProperty == p.IdProperty);
-            return PropertyMapper.ToDto(p, image);
+            return _mapper.Map<PropertyDto>(p, opts =>
+            {
+                opts.Items["image"] = image;
+            });
         }).ToList();
 
         return (propertyDtos, totalCount);
     }
 
 
+
     public async Task<PropertyDto?> GetByIdAsync(Property property)
     {
         if (property == null)
             return null;
+
         var image = await _imageRepository.GetByIdAsync(property.IdProperty);
 
-        return PropertyMapper.ToDto(property, image);
+        var propertyDto = _mapper.Map<PropertyDto>(property, opts =>
+        {
+            opts.Items["image"] = image;
+        });
+
+        return propertyDto;
     }
+
 
 
     public async Task<PropertyDto?> CreateAsync(CreatePropertyDto request)
