@@ -49,7 +49,7 @@ public class PropertyService
     }
 
 
-    public async Task<PropertyDto> CreateAsync(CreatePropertyDto request)
+    public async Task<PropertyDto?> CreateAsync(CreatePropertyDto request)
     {
         var property = new Property
         {

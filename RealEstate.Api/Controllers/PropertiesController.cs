@@ -18,27 +18,20 @@ public class PropertiesController : ControllerBase
 
     [HttpGet]
     public async Task<IActionResult> GetAllProperties(
-    [FromQuery] string? nombre = null,
-    [FromQuery] string? direccion = null,
-    [FromQuery] decimal? precioMinimo = null,
-    [FromQuery] decimal? precioMaximo = null,
-    [FromQuery] int pagina = 1,
-    [FromQuery] int tamanoPagina = 10)
+    [FromQuery] PropertyQueryDto query)
     {
         try
         {
-            var (propiedades, totalRegistros) = await _service.GetAllAsync(
-                nombre, direccion, precioMinimo, precioMaximo, pagina, tamanoPagina);
+            var (properties, totalCount) = await _service.GetAllAsync(
+       query.Nombre,
+       query.Direccion,
+       query.PrecioMinimo,
+       query.PrecioMaximo,
+       query.Pagina,
+       query.TamanoPagina
+   );
 
-            var respuesta = new
-            {
-                TotalRegistros = totalRegistros,
-                PaginaActual = pagina,
-                TamanoPagina = tamanoPagina,
-                Propiedades = propiedades
-            };
-
-            return Ok(respuesta);
+            return Ok(new { totalCount, properties });
         }
         catch (Exception ex)
         {

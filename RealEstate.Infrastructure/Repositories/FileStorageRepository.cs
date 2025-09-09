@@ -13,8 +13,8 @@ public class FirebaseStorageRepository : IFileStorageRepository
 
     public FirebaseStorageRepository(IConfiguration config)
     {
-        _bucketName = config["Firebase:Bucket"];
-        _credentialsPath = config["Firebase:CredentialsPath"];
+        _bucketName = config["Firebase:Bucket"] ?? throw new ArgumentNullException("Firebase:Bucket");;
+        _credentialsPath = config["Firebase:CredentialsPath"] ?? throw new ArgumentNullException("Firebase:CredentialsPath");;
 
         if (string.IsNullOrEmpty(_credentialsPath))
             throw new InvalidOperationException("Firebase credentials path is not configured.");
@@ -38,7 +38,7 @@ public class FirebaseStorageRepository : IFileStorageRepository
 
     private string GenerateSignedUrl(string path, TimeSpan duration)
     {
-        var signer = UrlSigner.FromServiceAccountPath(_credentialsPath);
+        var signer = UrlSigner.FromCredentialFile(_credentialsPath);
         return signer.Sign(
             _bucketName,
             path,

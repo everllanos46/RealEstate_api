@@ -32,8 +32,8 @@
               "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Application\\RealEstate.Application.csproj": {
                 "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Application\\RealEstate.Application.csproj"
               },
-              "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
-                "projectPath": "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj"
+              "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj"
               }
             }
           }
@@ -217,14 +217,14 @@
         }
       }
     },
-    "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
+    "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
         "projectName": "RealEstate.Infrastructure",
-        "projectPath": "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\everl\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealState_api\\RealEstate.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\everl\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var mongoSettings = builder.Configuration.GetSection("MongoDb");
 builder.Services.AddSingleton(new MongoDbContext(
-    mongoSettings["ConnectionString"], mongoSettings["DatabaseName"]
+    mongoSettings["ConnectionString"]!, mongoSettings["DatabaseName"]!
 ));
 
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
