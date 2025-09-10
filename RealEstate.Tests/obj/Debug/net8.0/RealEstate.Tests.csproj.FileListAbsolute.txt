@@ -416,3 +416,6 @@ c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Tests\ob
 c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Tests\obj\Debug\net8.0\RealEstate.Tests.pdb
 c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Tests\obj\Debug\net8.0\RealEstate.Tests.genruntimeconfig.cache
 c:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Tests\obj\Debug\net8.0\ref\RealEstate.Tests.dll
+C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Tests\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Tests\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Tests\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

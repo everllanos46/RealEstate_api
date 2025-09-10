@@ -8,6 +8,7 @@ using RealEstate.Domain.Interfaces;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace RealEstate.Tests.Services
 {
@@ -50,20 +51,21 @@ namespace RealEstate.Tests.Services
             var result = await _service.UploadAsync(propertyId, fileDto);
 
             ClassicAssert.IsNotNull(result);
-            ClassicAssert.AreEqual(propertyId, result.IdProperty);
-            ClassicAssert.AreEqual(expectedUrl, result.File);
-            ClassicAssert.IsTrue(result.Enabled);
+            ClassicAssert.AreEqual(propertyId, result.Data.IdProperty);
+            ClassicAssert.AreEqual(expectedUrl, result.Data.File);
+            ClassicAssert.IsTrue(result.Data.Enabled);
         }
 
         [Test]
-        public void UploadAsync_Throws_WhenFileIsNull()
+        public async Task UploadAsync_WhenFileIsNull_ReturnsErrorResponse()
         {
             string propertyId = "prop-1";
 
-            ClassicAssert.ThrowsAsync<ArgumentNullException>(async () =>
-            {
-                await _service.UploadAsync(propertyId, null!);
-            });
+            var result = await _service.UploadAsync(propertyId, null!);
+
+            ClassicAssert.IsNotNull(result);
+            ClassicAssert.AreEqual(HttpStatusCode.InternalServerError, result.HttpStatusCode);
+            ClassicAssert.AreEqual("El archivo es obligatorio", result.Message);
         }
     }
 }

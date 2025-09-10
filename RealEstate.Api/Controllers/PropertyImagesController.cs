@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using RealEstate.Application.DTOs;
 using RealEstate.Application.Services;
-using RealEstate.Domain.Entities;
-using RealEstate.Domain.Interfaces;
 
 namespace RealEstate.Api.Controllers;
 
@@ -11,19 +9,17 @@ namespace RealEstate.Api.Controllers;
 public class PropertyImagesController : ControllerBase
 {
     private readonly PropertyImageService _service;
-    private readonly IPropertyImageRepository _repository;
 
-    public PropertyImagesController(IPropertyImageRepository repository, PropertyImageService imageService)
+    public PropertyImagesController(PropertyImageService service)
     {
-        _repository = repository;
-        _service = imageService;
+        _service = service;
     }
 
     [HttpPost("{propertyId}/upload")]
     public async Task<IActionResult> Upload(string propertyId, IFormFile file)
     {
         if (file == null || file.Length == 0)
-            return BadRequest("No file uploaded.");
+            return BadRequest(new { Message = "No se subió ningún archivo." });
 
         var dto = new UploadFileDto
         {
@@ -32,8 +28,7 @@ public class PropertyImagesController : ControllerBase
             ContentType = file.ContentType
         };
 
-        var image = await _service.UploadAsync(propertyId, dto);
-        return Ok(image);
+        var response = await _service.UploadAsync(propertyId, dto);
+        return StatusCode((int)response.HttpStatusCode, response);
     }
-
 }

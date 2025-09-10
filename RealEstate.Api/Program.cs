@@ -6,6 +6,7 @@ using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using RealEstate.Infrastructure.Services;
 using RealEstate.Infrastructure.Persistence;
+using RealEstate.Application.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +18,17 @@ MongoMapping.Configure();
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
 builder.Services.AddScoped<IPropertyImageRepository, PropertyImageRepository>();
 builder.Services.AddScoped<IFileStorageRepository, FirebaseStorageRepository>();
+builder.Services.AddScoped<IOwnerRepository, OwnerRepository>();
+builder.Services.AddScoped<IPropertyTraceRepository, PropertyTraceRepository>();
+
 builder.Services.AddAutoMapper(typeof(PropertyProfile));
+builder.Services.AddAutoMapper(typeof(OwnerProfile));
+builder.Services.AddAutoMapper(typeof(PropertyTraceProfile));
+
 builder.Services.AddScoped<PropertyService>();
 builder.Services.AddScoped<PropertyImageService>();
+builder.Services.AddScoped<OwnerService>();
+builder.Services.AddScoped<PropertyTraceService>();
 
 
 var firebaseKeyPath = builder.Configuration["Firebase:CredentialsPath"];

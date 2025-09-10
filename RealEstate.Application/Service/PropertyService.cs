@@ -11,15 +11,21 @@ public class PropertyService
     private readonly IPropertyRepository _propertyRepository;
     private readonly IPropertyImageRepository _imageRepository;
     private readonly IMapper _mapper;
+    private readonly OwnerService _ownerService;
+    private readonly PropertyTraceService _propertyTraceService;
 
     public PropertyService(
         IPropertyRepository propertyRepository,
         IPropertyImageRepository imageRepository,
-        IMapper mapper)
+        IMapper mapper,
+        OwnerService ownerService,
+        PropertyTraceService propertyTraceService)
     {
         _propertyRepository = propertyRepository;
         _imageRepository = imageRepository;
         _mapper = mapper;
+        _ownerService = ownerService;
+        _propertyTraceService = propertyTraceService;
     }
 
     private const string ErrorMessage = "Error en el service de propiedades";
@@ -40,7 +46,7 @@ public class PropertyService
             {
                 return new Response<PropertiesResponseDto>(
                     "No se encontraron propiedades",
-                    HttpStatusCode.NotFound,
+                    HttpStatusCode.OK,
                     new PropertiesResponseDto
                     {
                         Properties = Enumerable.Empty<PropertyDto>(),
@@ -85,15 +91,29 @@ public class PropertyService
         }
     }
 
-    public async Task<Response<PropertyDto>> GetByIdAsync(Property property)
+    public async Task<Response<PropertyDto>> GetByIdAsync(string idProperty)
     {
         try
         {
+            Property? property = await _propertyRepository.GetByIdAsync(idProperty);
             if (property == null)
-                return new Response<PropertyDto>("Propiedad no encontrada", HttpStatusCode.NotFound);
+                return new Response<PropertyDto>("Propiedad no encontrada", HttpStatusCode.NoContent);
 
             var image = await _imageRepository.GetByIdAsync(property.IdProperty);
-            var propertyDto = _mapper.Map<PropertyDto>(property, opts => { opts.Items["image"] = image; });
+
+            var ownerResponse = await _ownerService.GetByIdAsync(property.IdOwner);
+            OwnerDto? ownerDto = ownerResponse.Data;
+            var traceResponse = await _propertyTraceService.GetByIdPropertyAsync(property.IdProperty);
+            PropertyTraceDto? propertyTraceDto = traceResponse.Data;
+
+
+            var propertyDto = _mapper.Map<PropertyDto>(property, opts =>
+            {
+                opts.Items["image"] = image;
+                opts.Items["owner"] = ownerDto;
+                opts.Items["trace"] = propertyTraceDto;
+            });
+
 
             return new Response<PropertyDto>("Propiedad encontrada", HttpStatusCode.OK, propertyDto);
         }
@@ -104,25 +124,17 @@ public class PropertyService
         }
     }
 
+
     public async Task<Response<PropertyDto>> CreateAsync(CreatePropertyDto request)
     {
         try
         {
-            var property = new Property
-            {
-                IdProperty = Guid.NewGuid().ToString(),
-                Name = request.Name,
-                Address = request.Address,
-                Price = request.Price,
-                CodeInternal = $"INT-{DateTime.UtcNow.Ticks}",
-                Year = DateTime.UtcNow.Year,
-                IdOwner = request.IdOwner
-            };
+            var property = _mapper.Map<Property>(request);
 
             await _propertyRepository.AddAsync(property);
 
-            var propertyDtoResponse = await GetByIdAsync(property);
-            return propertyDtoResponse;
+            var propertyDtoResponse = _mapper.Map<PropertyDto>(property);
+            return new Response<PropertyDto>("Propiedad registrada", HttpStatusCode.OK, propertyDtoResponse);
         }
         catch (Exception ex)
         {

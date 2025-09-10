@@ -22,11 +22,7 @@ public class PropertyImageService
         try
         {
             if (file == null)
-                return new Response<PropertyImage>("No se recibió el archivo", HttpStatusCode.BadRequest);
-
-            if (string.IsNullOrEmpty(propertyId))
-                return new Response<PropertyImage>("Id no encontrado", HttpStatusCode.BadRequest);
-
+                return new Response<PropertyImage>("El archivo es obligatorio", HttpStatusCode.InternalServerError);
             var fileName = $"{propertyId}/{Guid.NewGuid()}_{file.FileName}";
             var url = await _storageRepository.UploadAsync(fileName, file.Content, file.ContentType);
 

@@ -39,4 +39,14 @@ public class PropertiesController : ControllerBase
         var response = await _service.CreateAsync(request);
         return StatusCode((int)response.HttpStatusCode, response);
     }
+
+    [HttpGet("{propertyId}/get")]
+    public async Task<IActionResult> GetById(string propertyId)
+    {
+
+        var response = await _service.GetByIdAsync(propertyId);
+        return StatusCode((int)response.HttpStatusCode, response);
+    }
+
+    
 }

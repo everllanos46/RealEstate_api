@@ -27,7 +27,7 @@ public class FirebaseStorageRepository : IFileStorageRepository
         var storage = await StorageClient.CreateAsync(_credential);
 
         await storage.UploadObjectAsync(_bucketName, path, contentType, content);
-        return GenerateSignedUrl(path, TimeSpan.FromHours(1));
+        return GenerateSignedUrl(path, TimeSpan.FromDays(7));
     }
 
     public async Task DeleteAsync(string path)
