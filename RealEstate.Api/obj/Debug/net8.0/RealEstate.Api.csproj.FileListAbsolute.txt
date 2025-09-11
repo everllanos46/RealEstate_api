@@ -108,7 +108,6 @@ C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Api\bin\D
 C:\Users\everl\Desktop\Programacion\RealState\RealState_api\RealEstate.Api\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
 C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\bin\Debug\net8.0\appsettings.json
-C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\bin\Debug\net8.0\firebase-key.json
 C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\bin\Debug\net8.0\RealEstate.Api.staticwebassets.runtime.json
 C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\bin\Debug\net8.0\RealEstate.Api.exe
 C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\bin\Debug\net8.0\RealEstate.Api.deps.json
@@ -171,3 +170,4 @@ C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\obj\
 C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\obj\Debug\net8.0\ref\RealEstate.Api.dll
 C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\everl\Desktop\Programacion\RealState\RealEstate_api\RealEstate.Api\bin\Debug\net8.0\firebase-key.json

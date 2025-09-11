@@ -133,7 +133,15 @@ public class PropertyService
 
             await _propertyRepository.AddAsync(property);
 
-            var propertyDtoResponse = _mapper.Map<PropertyDto>(property);
+            var propertyDtoResponse = _mapper.Map<PropertyDto>(
+                property,
+                opts =>
+                {
+                    opts.Items["image"] = null;
+                    opts.Items["owner"] = null;
+                    opts.Items["trace"] = null;
+            }
+);
             return new Response<PropertyDto>("Propiedad registrada", HttpStatusCode.OK, propertyDtoResponse);
         }
         catch (Exception ex)

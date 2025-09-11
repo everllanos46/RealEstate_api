@@ -1318,11 +1318,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
+      "projectUniqueName": "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
       "projectName": "RealEstate.Infrastructure",
-      "projectPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
+      "projectPath": "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\everl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Infrastructure\\obj\\",
+      "outputPath": "c:\\Users\\everl\\Desktop\\Programacion\\RealState\\RealEstate_api\\RealEstate.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\everl\\AppData\\Roaming\\NuGet\\NuGet.Config",

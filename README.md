@@ -21,7 +21,7 @@ Basado en Clean Architecture con cuatro capas principales:
 2. Restaurar paquetes:
     dotnet restore
 
-3. Configura el archivo appsettings.json para las conexiones a base de datos y colocar el firebase-key.json (https://drive.google.com/file/d/1GlkS7M_WzYoHzNEVrM3Skqp2wpC0F6oN/view?usp=sharing) en la misma ruta
+3. Configura el archivo appsettings.json para las conexiones a base de datos y colocar el firebase-key.json en la misma ruta
 
 4. Ejecución de la aplicación
     cd RealEstate.Api
